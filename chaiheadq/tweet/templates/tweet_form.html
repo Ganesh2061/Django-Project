@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+chai aur tweet
+{% endblock %}
+
+{% block content %}
+
+<h1 class="text-center text-white mt-4" > Welcome to chai Django project </h1>
+<h2>{% if form.instance.pk %} 
+    Edit Tweet 
+    {% else %} 
+    Create Tweet
+     {% endif %}
+
+<form method="post" enctype="multipart/form-data"
+class="form">
+{% csrf_token %}
+ <!-- just for security, like connected to backend we dont need to do any things-->
+{{ form.as_p }} 
+<!-- Rendering as paragraph not necessary we can still render normally as well-->
+<button class="btn btn-warning" type="submit">Submit</button>
+</form>
+<a href="{% url 'tweet_list' %}">Back to tweet list</a>
+</h2>
+{% endblock %}

@@ -1,0 +1,11 @@
+<!-- we are using default django registratoon system so it it expected that we make registration folder in djago template i.e not the user app template.it is also expected that login.html, register.html, logout.html are place there-->
+{% extends "layout.html" %}
+
+{% block content %}
+<h2>Logged Form</h2>
+
+
+<p> You have been logged out? <a href="{% url 'login' %}"> 
+   Login here </a> </p>
+
+{% endblock %}
